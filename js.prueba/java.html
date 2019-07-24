@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="fondo.css">
+    <link rel="javasc" href="fondo.css">
+    <title>Cuadricula</title>
+
+
+</head>
+
+<body>
+    <h1>Ingrese filas y columnas</h1>
+    <div>
+        <label for="Columas"></label>
+        <input type="number" placeholder="filas" name="Columas" id="Columnas">
+        <br><br>
+        <label for="Filas"></label>
+        <input type="number" placeholder="columnas" name="Filas" id="Filas"><br>
+
+        <input type="button" value="GENERAR" id="cuadricula">
+    </div>
+    <script>
+        var Grid = [];
+        var cont = 0;
+        document.getElementById("cuadricula")
+            .addEventListener("click", function() {
+                var F = parseInt(document.getElementById("Filas").value);
+                var C = document.getElementById("Columnas").value;
+                for (let i = 0; i < C; i++) {
+                    Grid.push(new Array);
+                    for (let j = 0; j < F; j++) {
+                        cont++;
+                        //alert(cont);
+                        Grid[i].push(cont);
+                    }
+                }
+            })
+
+        function imprimirFilas() {
+            for (let i = 0; i < Grid.length; i++) {
+                console.log(Grid[i]);
+            }
+        }
+
+        function imprimirColumnas() {
+            for (let i = 0; i < Grid.length; i++) {
+                for (let j = 0; j < Grid[0].length; j++) {
+                    console.log(Grid[j][i]);
+                }
+            }
+        }
+
+        function imprimirTodo() {
+            console.log(Grid);
+        }
+    </script>
+</body>
+
+</html>
